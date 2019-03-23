@@ -19,6 +19,11 @@ $router->map('GET','/books/[i:id]/page/[i:page_number]/html',
 $router->map('GET','/books/[i:id]/page/[i:page_number]/html/', 
 'controllers/getPageHtml.php', 'getPageHtml2');
 
+$router->map('GET','/books/[i:id]/page/[i:page_number]/text', 
+'controllers/getPageText.php', 'getPageText');
+$router->map('GET','/books/[i:id]/page/[i:page_number]/text/', 
+'controllers/getPageText.php', 'getPageText2');
+
 
 //We match it. And if it matches, we call what matched, otherwise we call a errorMessageNotFound
 $match = $router->match();
