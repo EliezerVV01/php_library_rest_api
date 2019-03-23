@@ -10,8 +10,15 @@ $router->setBasePath('/php_library_rest_api');
 //Here we map all the routes that we are going to handle
 $router->map('GET','/books', 'controllers/getAllBooks.php', 'GetAllBooks');
 $router->map('GET','/books/', 'controllers/getAllBooks.php', 'GetAllBooks2');
+
 $router->map('GET','/books/[i:id]', 'controllers/getBookById.php', 'GetBookById');
 $router->map('GET','/books/[i:id]/', 'controllers/getBookById.php', 'GetBookById2');
+
+$router->map('GET','/books/[i:id]/page/[i:page_number]/html', 
+'controllers/getPageHtml.php', 'getPageHtml');
+$router->map('GET','/books/[i:id]/page/[i:page_number]/html/', 
+'controllers/getPageHtml.php', 'getPageHtml2');
+
 
 //We match it. And if it matches, we call what matched, otherwise we call a errorMessageNotFound
 $match = $router->match();

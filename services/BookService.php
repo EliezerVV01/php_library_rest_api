@@ -23,7 +23,7 @@ class BookService{
         $row_num=$statement->rowCount();
 
         if($row_num>0){
-           //ew create a book array, map all the books in the result and push em into the array
+           //we create a book array, map all the books in the result and push em into the array
            $books=array();
            while($row=$statement->fetch(PDO::FETCH_ASSOC)){
                
