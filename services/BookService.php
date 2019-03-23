@@ -15,7 +15,7 @@ class BookService{
        and false if there's nothing     */
     function getAllBooks(){
         $query="call getAllBooks()";
-        //Prepare statement and  execute a stament with the previous query
+        //Prepare  astatement with the previous query and  execute it
         $statement=$this->connection->prepare($query);
         $statement->execute();
 
@@ -32,6 +32,32 @@ class BookService{
                array_push($books, $book);
            }
            return $books;
+
+        }else{
+
+            return false;
+
+        }
+
+    }
+
+      /*This method returns the book which matches with the id injected
+       and false if there's none  */
+       function getBookById($id){
+
+        $query="call getBookById(".$id.")";
+
+        //Prepare  astatement with the previous query and  execute it
+        $statement=$this->connection->prepare($query);
+        $statement->execute();
+
+        //We check if there's a book with the id requested and returned, otherwise we return false
+        if($row=$statement->fetch(PDO::FETCH_ASSOC)){
+
+               extract($row);
+               $book=new Book($id,$title,$author,$release_date,$book_editorial);
+               return $book;
+
 
         }else{
 

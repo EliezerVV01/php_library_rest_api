@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 include 'services/ErrorMessageService.php';
 
 
-//this function returns the json of the array with all the books and the database plus a true value
+//this function print the json of the array with all the books and the database plus a true value
 
 function getAllBooksController(){
     $error_message_service=new ErrorMessageService();

@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 include 'services/BookService.php';
 include 'config/Database.php';
 
-//this function returns the json of the array with all the books and the database plus a true value
+//this function print the json of the array with all the books and the database plus a true value
 
 function getAllBooksController(){
 
